@@ -9,6 +9,9 @@
   --button-press-color: #bbb;
   --highlight-color: #08f;
   --highlight-alt-color: #f80;
+  --margin: 20px;
+  --padding: 20px;
+  --toolbar-height: 60px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,8 +34,8 @@ a {
 
 header {
   background-color: var(--highlight-color);
-  margin: 0%;
-  padding: 20px;
+  margin: var(--margin);
+  padding: var(--padding);
   width: 100%;
   box-sizing: border-box;
 }
@@ -57,7 +60,7 @@ h6 {
   margin: 0 auto;
 
   background-color: var(--card-color);
-  padding: 20px;
+  padding: var(--padding);
   border-style: hidden;
   border-radius: 8px;
 }
@@ -81,10 +84,10 @@ h6 {
 
 .header {
   margin: 0 auto;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: var(--margin);
+  margin-bottom: var(--margin);
   background-color: var(--highlight-color);
-  padding: 20px;
+  padding: var(--padding);
   max-width: 700px;
   border-radius: 8px;
 }
@@ -133,10 +136,10 @@ h6 {
 .editor {
   position: absolute;
   margin: 0%;
-  right: 20px;
+  right: var(--margin);
   top: 80px;
   bottom: 20px;
-  left: 330px;
+  left: var(--margin);
   font-family: monospace;
 }
 
@@ -150,11 +153,20 @@ h6 {
   flex-direction: row;
   align-items: stretch;
   position: absolute;
-  right: 15px;
-  left: 325px;
-  top: 20px;
-  height: 40px;
+  right: var(--margin);
+  left: var(--margin);
+  top: var(--margin);
+  height: var(--toolbar-height);
   padding: 0px;
+}
+
+.editor {
+  position: absolute;
+  bottom: var(--margin);
+  top: calc(var(--toolbar-height) + 20px + var(--margin));
+  width: calc(100vw - 4 * var(--margin));
+  font-family: monospace;
+  font-size: 16px;
 }
 
 /* Pseudoclasses */
