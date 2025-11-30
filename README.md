@@ -1,6 +1,7 @@
 # Nqde
-# Not quite developemnt environment
+# Not quite desktop environment
 
-Nqde is a text editor that runs entirely in the web browser.
+Nqde is a DOM manager for easier UI construction.
+The Nqde itself doesn't do much, it requires workers to construct it.
 
-Strictly speaking, it just loads extensions and expose API to them. Nqde itself is just a glorified window manager (hence alternative backronym of "Not quite desktop environment").
+## Features
