@@ -1,4 +1,8 @@
-import { loadExtension } from "./load"
+import { loadExtension } from "./load.js"
+import { NqdeExtension } from "./mainapi.js"
 
-editor  = loadExtension("editor")
-toolbar = loadExtension("toolbar")
+const editor  = loadExtension("editor")
+const toolbar = loadExtension("toolbar")
+
+NqdeExtension(editor)
+NqdeExtension(toolbar)
