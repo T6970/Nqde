@@ -20,6 +20,17 @@ export const Nqde = {
       }
     )
   },
+  setContent (id, content) {
+    postMessage(
+      { 
+        type: 'setContent',
+        content: {
+          id: id,
+          content: content
+        }
+      }
+    )
+  },
   deleteCard (id) {
     postMessage(
       { 
