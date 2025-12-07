@@ -1,6 +1,13 @@
 import { Nqde } from "../js/api.js";
 
-Nqde.newCard("test")
-Nqde.setContent("test", "<h1>Hello, NQDE!</h1><p>This is a test card.</p>")
-Nqde.moveCard("test", 150, 150)
-Nqde.resizeCard("test", 400, 300)
+Nqde.newCard("demo")
+Nqde.addContent("demo", '<h1>Nqde</h1>')
+Nqde.resizeCard("demo", 400, 300)
+Nqde.moveCard("demo", 200, 150)
+
+const innerCard = document.createElement('div')
+innerCard.style.height = "175px"
+innerCard.classList = "nest card"
+innerCard.innerHTML = "<p>This is an inner card.</p>"
+
+Nqde.addContent("demo", innerCard.outerHTML)
