@@ -27,7 +27,7 @@ export const Nqde = {
   /**
    * Appends content into a card; existing content will not be removed.
    * @param {string} id ID of the card.
-   * @param {HTMLElement} content Content to add into the card.
+   * @param {string} content Content to add into the card.
    */
   addContent (id, content) {
     if (!id) {
