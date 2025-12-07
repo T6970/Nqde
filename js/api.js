@@ -112,5 +112,44 @@ export const Nqde = {
     }
     card.style.width = width + "px"
     card.style.height = height + "px"
+  },
+
+  /**
+   * Makes a card draggable with the mouse.
+   * @param {string} id ID of the card.
+   */
+  makeDraggable (id) {
+    const card = document.getElementById(id)
+    card.isDown = false
+    card.originX = card.style.left
+    card.originY = card.style.top
+    if (!id) {
+      throw new ReferenceError("No ID provided")
+    }
+    if (!card) {
+      throw new ReferenceError(`No card found with ID: ${id}`)
+    }
+    card.addEventListener('mousedown', (e) => {
+      console.log(`Dragging ${id}`)
+      card.isDown = true
+      card.style.cursor = "grabbing"
+      card.originX = card.style.left
+      card.originY = card.style.top
+    })
+
+    document.addEventListener("mouseup", () => {
+      card.isDown = false
+      card.style.cursor = "grab"
+    })
+    
+    document.addEventListener("mousemove", (e) => {
+      if (!card.isDown) return
+    
+      const x = e.clientX - card.originX
+      const y = e.clientY - card.originY
+    
+      card.style.left = x + "px"
+      card.style.top = y + "px"
+    })
   }
 }
