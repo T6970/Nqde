@@ -46,7 +46,7 @@ export const Nqde = {
   /**
    * Replaces the content of a card. Doesn't keep existing content.
    * @param {string} id ID of the card.
-   * @param {HTMLElement} content New content of the card.
+   * @param {string} content New content of the card.
    */
   setContent (id, content) {
     if (!id) {
