@@ -1,4 +1,4 @@
-import { Nqde } from "../src/api.js";
+import { Nqde } from "./api.js";
 
 Nqde.newCard("demo")
 Nqde.addContent("demo", '<h1>Nqde</h1>')
