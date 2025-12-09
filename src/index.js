@@ -3,6 +3,8 @@
  */
 export const Nqde = {
 
+  // Section make new thing
+
   /**
    * Creates a new card element; it will be positioned at (100, 100) with size 800x600.
    * @param {string} id ID for the card.
@@ -62,6 +64,13 @@ export const Nqde = {
     card.innerHTML = content
   },
 
+
+
+
+
+
+  // Section destroy thing
+
   /**
    * Deletes a card.
    * @param {string} id ID of the card.
@@ -76,6 +85,12 @@ export const Nqde = {
     }
     card.remove()
   },
+
+
+
+
+
+  // Section edit thing
 
   /**
    * Moves a card to a new position. Positions are in pixels.
@@ -113,6 +128,35 @@ export const Nqde = {
     card.style.width = width + "px"
     card.style.height = height + "px"
   },
+
+  maxWidthCard (id) {
+    if (!id) {
+      throw new ReferenceError("No ID provided")
+    }
+    const card = document.getElementById(id)
+    if (!card) {
+      throw new ReferenceError(`No card found with ID: ${id}`)
+    }
+    card.style.width = window.innerWidth - 20 + "px"
+  },
+
+  maxHeightCard (id) {
+    if (!id) {
+      throw new ReferenceError("No ID provided")
+    }
+    const card = document.getElementById(id)
+    if (!card) {
+      throw new ReferenceError(`No card found with ID: ${id}`)
+    }
+    card.style.height = window.innerHeight - 20 + "px"
+  },
+
+  maximizeCard (id) {
+    this.maxWidthCard(id)
+    this.maxHeightCard(id)
+  },
+
+  // Section modifier of thing
 
   /**
    * Makes a card draggable with the mouse.
