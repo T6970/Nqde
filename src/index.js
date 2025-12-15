@@ -26,6 +26,12 @@ export const Nqde = {
     document.body.appendChild(card)
   },
 
+
+
+
+
+  // Section content of thing
+
   /**
    * Appends content into a card; existing content will not be removed.
    * @param {string} id ID of the card.
@@ -64,6 +70,28 @@ export const Nqde = {
     card.innerHTML = content
   },
 
+  /**
+   * Adds event listener to a card.
+   * @param {*} id ID of the card.
+   * @param {*} event Name of event to listen for.
+   * @param {*} onEvent What will happen when event's triggered.
+   */
+  listenFor(id, event, onEvent) {
+    if (!id) {
+      throw new ReferenceError("No ID provided")
+    }
+    if (!event) {
+      throw new ReferenceError("No event provided")
+    }
+    if (!onEvent) {
+      throw new ReferenceError("No event handler provided")
+    }
+    const card = document.getElementById(id)
+    if (!card) {
+      throw new ReferenceError(`No card found with ID: ${id}`)
+    }
+    card.addEventListener(event, onEvent)
+  },
 
 
 
@@ -155,6 +183,10 @@ export const Nqde = {
     this.maxWidthCard(id)
     this.maxHeightCard(id)
   },
+
+
+
+
 
   // Section modifier of thing
 
